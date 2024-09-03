@@ -1,0 +1,15 @@
+name: dh-amazon-docker
+services:
+  deephaven:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - '${DEEPHAVEN_PORT:-10000}:10000'
+    volumes:
+      - ./data:/data
+      - ../amazon-data:/amazon-data
+      - ../detector:/detector
+    environment:
+      - PYTHONPATH=${PYTHONPATH}:/data/storage/notebooks
+      - START_OPTS=-Xmx40g -DAuthHandlers=io.deephaven.auth.AnonymousAuthenticationHandler

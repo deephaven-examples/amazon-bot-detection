@@ -1,0 +1,4 @@
+deephaven-server
+deephaven-ipywidgets
+notebook
+ipykernel
