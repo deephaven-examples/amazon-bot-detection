@@ -6,6 +6,21 @@ The model used for bot prediction comes from [Vidhi Kishor Waghela's entry](http
 
 This Deephaven example can be run in Jupyter using Deephaven's [Python package](https://pypi.org/project/deephaven-server/), or inside of a Docker container.  We've provided scripts, notebooks, and instructions for each of [Jupyter](#jupyter) and [Docker](#docker), so pick the path that feels most comfortable to you.
 
+## Git LFS
+
+The trained PyTorch model used in this project is stored with Git LFS. To access this model, you need to install LFS and use it for this repository.
+
+1. Install Git LFS by following the instructions [here](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage).
+
+2. Configure Git LFS for this repo and use it to pull the PyTorch model:
+   ```bash
+   git lfs install
+   git lfs fetch
+   git lfs pull
+   ```
+   
+Now that the PyTorch model is available, continue to the [Jupyter](#jupyter) or [Docker](#docker) section to start working with this example.
+
 ## Jupyter
 
 Deephaven's Python package requires Java 17 or higher to be installed on your machine. See [this page](https://deephaven.io/core/docs/getting-started/launch-build/#prerequisites) for OS-specific instructions on installing Java.
